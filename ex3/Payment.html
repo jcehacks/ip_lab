@@ -1,0 +1,48 @@
+<html>
+<body bgcolor="pink"><br><br><br>
+<script language="javascript">
+function validate()
+{
+var flag=1;
+if(document.myform.id.value==""|| document.myform.pwd.value==""||
+document.myform.amount.value==""|| document.myform.num.value=="")
+{
+flag=0;
+}
+var str=document.myform.amount.value; var x=new RegExp("\\d","g");
+if(!(str.match(x)))
+{
+flag=0;
+}
+var str1=document.myform.num.value; var
+x1=new RegExp("\\d","g");
+if(!(str.match(x1)))
+{
+flag=0;
+}
+if(flag==1)
+{
+alert("VALID INPUT");
+window.self.location.href="order.html";
+}
+else
+{
+alert("INVALID INPUT");
+document.myform.focus();
+}
+}
+</script>
+<form name="myform">
+<div align="center"><pre>
+LOGIN ID:<input type="text" name="id"><br>
+PASSWORD:<input type="password" name="pwd"><br>
+AMOUNT:<input type="text" name="amount"><br>
+CREDIT CARD NUMBER:<input type="PASSWORD" name="num"><br></pre><br><br>
+</div>
+<br><br>
+<div align="center">
+<input type="button" value="ok" onClick="validate()">&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="clear" >
+</form>
+</body>
+</html>
